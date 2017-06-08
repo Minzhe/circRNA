@@ -108,9 +108,9 @@ while (<FILE>) {
 		$fastq[$i] = $sample;
 	}
 
-	# find circRANs
-	print {$fh{$process}} "### find circRNA\n" ;
-	print {$fh{$process}} "perl ~/projects/Clirc/bin/filter_circRNA.pl 2 0.34 20 " . $clip_dir . "all_circ.txt ";
+	# filter circRANs
+	print {$fh{$process}} "### filter circRNA\n" ;
+	print {$fh{$process}} "perl ~/projects/circRNA/code/circRNA/filter_circRNA.pl 2 0.34 20 " . $clip_dir . "all_circ.txt " . "/qbrc/home/mzhang/projects/circRNA/data/library/ ";
 	map {print {$fh{$process}} $clip_dir . $_ . " "} @fastq;
 	print {$fh{$process}} "\n";
 
@@ -128,7 +128,7 @@ while (<FILE>) {
 	print {$fh{$process}} "perl /qbrc/software/HOMER/bin/findMotifs.pl " . $clip_dir . "/all_circ.txt_motif fasta " . $homer_dir . $items_clip[0] . "/motifResults/ ";
 	print {$fh{$process}} "-p 6 -noconvert -chopify -len 4,5,6,7,8,9,10 -fastaBg " . $bg_circRNA . "\n\n";
 	
-	print {$fh{$process}} "#########################################################################\n";
+	print {$fh{$process}} "#########################################################################\n\n";
 }
 
 ##############  submit each job  ###############

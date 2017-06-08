@@ -36,11 +36,11 @@ perl ~/projects/Clirc/bin/query.pl hg19_index.txt ~/data/genomes/hg19/hg19_maske
 
 rm -f -r gsnap
 mkdir gsnap
-gmap_build -D gsnap -d circRNA ~/data/genomes/hg19/hg19_masked.fa hg19_circRNA.fa
-gmap_build -D gsnap -d genome ~/data/genomes/hg19/hg19_masked.fa 
+gmap_build -D gsnap -d circRNA ~/data/genomes/hg19/hg19_masked.fa hg19_circRNA.fa			# This command require large RAM
+gmap_build -D gsnap -d genome ~/data/genomes/hg19/hg19_masked.fa 							# This command require large RAM
 gmap_build --build-sarray=0 -D gsnap -d circRNA_on_genome hg19_circRNA_on_genome.fa 
 
-##########  mm9  ################
+############  mm9  ################
 cd ~/projects/circRNA/data/library/mm9
 
 perl ~/projects/Clirc/bin/circRNA2region.pl 50 mm9_circRNA_coordinates.txt mm9_circBase.txt mm9_CIRI.txt mm9_PMID25921068.txt

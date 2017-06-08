@@ -30,24 +30,24 @@ cd ~/projects/circRNA/data/library/mm9/CIRI
 # /qbrc/software/bwa-0.7.15/bwa mem -t 12 -T 19 ~/data/genomes/mm9/mm9_masked.fa ~/data/ENCODE/mm/ENCFF902XHK.fastq ~/data/ENCODE/mm/ENCFF344IMT.fastq > mm_encode15.sam 
 # /qbrc/software/bwa-0.7.15/bwa mem -t 12 -T 19 ~/data/genomes/mm9/mm9_masked.fa ~/data/ENCODE/mm/ENCFF106GQS.fastq ~/data/ENCODE/mm/ENCFF797ZCH.fastq > mm_encode16.sam 
 
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode1.sam -O mm_encode1_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output1.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode1.sam -O mm_encode1_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output1.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode2.sam -O mm_encode2_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output2.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode3.sam -O mm_encode3_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output3.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode4.sam -O mm_encode4_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output4.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode5.sam -O mm_encode5_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output5.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode6.sam -O mm_encode6_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output6.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode7.sam -O mm_encode7_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output7.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode8.sam -O mm_encode8_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output8.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode9.sam -O mm_encode9_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output9.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode10.sam -O mm_encode10_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output10.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode11.sam -O mm_encode11_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output11.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode12.sam -O mm_encode12_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output12.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode13.sam -O mm_encode13_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output13.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode14.sam -O mm_encode14_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output14.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode15.sam -O mm_encode15_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output15.log
-perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode16.sam -O mm_encode16_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output16.log
-cat *circRNA* | grep -v circRNA_ID | awk '{print $2"\t"$3"\t"$4}' | sort | uniq > ../mm9_CIRI.txt
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode1.sam -O mm_encode1_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output1.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode1.sam -O mm_encode1_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output1.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode2.sam -O mm_encode2_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output2.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode3.sam -O mm_encode3_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output3.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode4.sam -O mm_encode4_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output4.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode5.sam -O mm_encode5_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output5.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode6.sam -O mm_encode6_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output6.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode7.sam -O mm_encode7_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output7.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode8.sam -O mm_encode8_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output8.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode9.sam -O mm_encode9_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output9.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode10.sam -O mm_encode10_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output10.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode11.sam -O mm_encode11_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output11.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode12.sam -O mm_encode12_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output12.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode13.sam -O mm_encode13_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output13.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode14.sam -O mm_encode14_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output14.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode15.sam -O mm_encode15_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output15.log
+# perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I mm_encode16.sam -O mm_encode16_circRNA.txt -F ~/data/genomes/mm9/mm9_masked.fa -A ~/data/genomes/mm9/ucsc.mm9.gtf -G CIRI_output16.log
+# cat *circRNA* | grep -v circRNA_ID | awk '{print $2"\t"$3"\t"$4}' | sort | uniq > ../mm9_CIRI.txt
 
 ##############  dm3  ###################
 cd ~/projects/circRNA/data/library/dm3/CIRI
@@ -78,10 +78,10 @@ perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I dm_encode11.sam -O dm
 perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I dm_encode12.sam -O dm_encode12_circRNA.txt -F ~/data/genomes/dm3/dm3_masked.fa -A ~/data/genomes/dm3/ucsc.dm3.gtf -G CIRI_output12.log
 perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I dm_encode14.sam -O dm_encode14_circRNA.txt -F ~/data/genomes/dm3/dm3_masked.fa -A ~/data/genomes/dm3/ucsc.dm3.gtf -G CIRI_output14.log
 perl ~/software/CIRI_v2.0.5/CIRI_v2.0.5.pl -U 3 -E 0.01 -I dm_encode15.sam -O dm_encode15_circRNA.txt -F ~/data/genomes/dm3/dm3_masked.fa -A ~/data/genomes/dm3/ucsc.dm3.gtf -G CIRI_output15.log
-cat *circRNA* | grep -v circRNA_ID | awk '{print $2"\t"$3"\t"$4}' | sort | uniq > ../dm3_CIRI.txt
+# cat *circRNA* | grep -v circRNA_ID | awk '{print $2"\t"$3"\t"$4}' | sort | uniq > ../dm3_CIRI.txt
 
-#################  hg19  ####################
-cd ~/projects/circRNA/data/library/hg19/CIRI
-cat *ciri*.txt | grep -v circRNA_ID | awk '{print $1"\t"$2"\t"$3}' | sort | uniq > ../hg19_CIRI.txt
+# #################  hg19  ####################
+# cd ~/projects/circRNA/data/library/hg19/CIRI
+# cat *ciri*.txt | grep -v circRNA_ID | awk '{print $1"\t"$2"\t"$3}' | sort | uniq > ../hg19_CIRI.txt
 
 
