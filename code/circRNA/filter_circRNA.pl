@@ -93,7 +93,7 @@ sub extract_sequence {
 	my $seq = uc $$circ_seq_ref{join("\t", @items[0 .. 2])}; # get sequence
 	my $rc = "";
 
-	$seq = ~s/\n//;
+	$seq =~ s/\n//;
 	$seq = substr $seq, length($seq)/2-$max_start, $max_start+$max_end; # regions that are bound by RBP at least once
 	if ($items[3] eq "+") { return $seq."\n"; } # positive strand
 	$seq = scalar reverse $seq; # reverse complement
