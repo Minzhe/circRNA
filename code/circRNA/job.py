@@ -227,10 +227,11 @@ for clip in clip_list:
 
         ## filter circRNA and motif analysis
         print('### filter circRNA', file=f)
+        circ_paths = [file.strip('.fastq') + '.circ.txt' for file in glob.glob('{}/*.fastq'.format(cur_circRNA_dir))]       # all circ.txt
         perl_cmd_3 = prepareFilterCircRNA(script_path=filter_circRNA_perl,
                                           output_file=os.path.join(cur_circRNA_dir, 'all_circ.txt'),
                                           library_path=genome_dir,
-                                          input_files=glob.glob('{}/*.circ.txt'.format(cur_circRNA_dir)))
+                                          input_files=circ_paths)
         print(perl_cmd_3, file=f)
 
         ##  motif analysis for linear reads
@@ -239,14 +240,15 @@ for clip in clip_list:
         print(shell_cmd, file=f)
         homer_cmd_1 = prepareHomerLinear(clip_dir=cur_circRNA_dir,
                                        homer_dir=os.path.join(homer_dir, clip),
-                                       bg_path=motif_dir)
+                                       bg_path=motif_dir + ref_genome.get(species[clip]) + '_bg.fa')
         print(homer_cmd_1, file=f)
 
         ## motif analysis for circRNA reads
         print('### motif analysis for circRNA reads', file=f)
-        homer_cmd_2 =
+        homer_cmd_2 = prepareHomerCircRNA(clip_dir=cur_circRNA_dir,
+                                          homer_dir=os.path.join(homer_dir, clip),
+                                          bg_path=motif_dir + ref_genome.get(species[clip]) + '_bg.fa')
+        print(homer_cmd_2, file=f)
 
-
-### write job head
-
-
+        ## processed flag
+        print('\ntouch {}'.format(os.path.join(cur_circRNA_dir, 'processed.tag')), file=f)

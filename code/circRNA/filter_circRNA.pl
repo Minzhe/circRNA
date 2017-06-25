@@ -82,7 +82,7 @@ foreach $circ (keys %circ) {
 close(FILE_OUT);
 close(FILE_OUT1);
 
-print "Done removing adaptors.\n";
+print "Done filtering circRNAs.\n";
 exit;
 
 ##########    subroutine    ##########
