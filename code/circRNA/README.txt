@@ -1,14 +1,30 @@
 In this folder
 
-job.pl ->
+job.py(job.pl) ->
+    trim_fastq.py
 	filter_circRNA.pl
+	bg_motif.R
+qsub.py
 
+
+--------------------------------------------
+
+File: job.py
+
+Description: This python script writes shell scripts and submits them. The shell scripts handle adaptor removal, alignment and circRNA detection
 
 --------------------------------------------
 
 File: job.pl
 
 Description: This perl script writes shell scripts and submits them. The shell scripts handle adaptor removal, alignment and circRNA detection
+
+--------------------------------------------
+
+File: trim_fastq.py
+
+Description: This python file is to trim off low quality head and tail of fastq reads.
+Use $python trim_fastq.py -h to see help.
 
 --------------------------------------------
 
@@ -19,3 +35,14 @@ Notice: This script is slightly differet from the same script in Clirc software.
 
 --------------------------------------------
 
+Files: bg_motif.R
+
+Description: These R scripts are used to conduct motif analysis
+
+--------------------------------------
+
+Files: qsub.py
+
+Description: This script is to submit jobs to server.
+
+--------------------------------------------

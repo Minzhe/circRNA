@@ -13,3 +13,8 @@ all_jobs = glob.glob('{}/CLIP*.sh'.format(jobs_path))
 
 for job in all_jobs:
     os.system('qsub {}'.format(job))
+
+control_jobs = glob.glob('{}/Control*.sh'.format(jobs_path))
+
+for job in control_jobs:
+    os.system('qsub {}'.format(job))

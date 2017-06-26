@@ -2,13 +2,12 @@
 ###                      analysis                        ###
 ############################################################
 
-read.file.R -> 
-bg_motif.R -> 
-    explore.R 
-    common.circRNA.R 
-    location.R, ontology.R
-    exon.R
-    on_genome.R
+read.file.R ->
+explore.R
+common.circRNA.R
+location.R, ontology.R
+exon.R
+on_genome.R
 
 
 --------------------------------------
@@ -16,12 +15,6 @@ bg_motif.R ->
 File: read.file.R
 
 Description: This R script reads the master file and the detected circRNAs for downstream analysis
-
---------------------------------------
-
-Files: bg_motif.R
-
-Description: These R scripts are used to conduct motif analysis
 
 --------------------------------------
 
