@@ -5,13 +5,13 @@
 
 setwd("~/projects/circRNA")
 
-hg19_anno <- read.table("~/data/hg19_anno_flat.txt", header = TRUE, quote = "", stringsAsFactors = FALSE, sep = "\t", comment = "")
-mm9_anno <- read.table("~/data/mm9_anno_flat.txt", header = TRUE, quote = "", stringsAsFactors = FALSE, sep = "\t", comment = "")
-dm3_anno <- read.table("~/data/dm3_anno_flat.txt", header = TRUE, quote = "", stringsAsFactors = FALSE, sep = "\t", comment = "")
+hg19_anno <- read.table("~/data/genomes/hg19/hg19_anno_flat.txt", header = TRUE, quote = "", stringsAsFactors = FALSE, sep = "\t", comment = "")
+mm9_anno <- read.table("~/data/genomes/mm9/mm9_anno_flat.txt", header = TRUE, quote = "", stringsAsFactors = FALSE, sep = "\t", comment = "")
+dm3_anno <- read.table("~/data/genomes/dm3/dm3_anno_flat.txt", header = TRUE, quote = "", stringsAsFactors = FALSE, sep = "\t", comment = "")
 anno <- list(Human = hg19_anno, Mouse = mm9_anno, Drosophila = dm3_anno)
 
 #################    　read data     ########################
-master <- read.table("docs/CLIP_Seq_data_v7.txt", stringsAsFactor = F, sep = "\t", header = T, quote = "")
+master <- read.table("docs/CLIP_Seq_data_v11.txt", stringsAsFactor = F, sep = "\t", header = T, quote = "")
 data <- list()
 for (j in 1:dim(master)[1]) {
     print(j)
@@ -19,7 +19,7 @@ for (j in 1:dim(master)[1]) {
                                               master$Experiment[j], master$Cell_line[j], master$Study[j], 
                                               master$GSE[j], master$Treatment[j])
 }
-save(data, file = "data/analysis/circRNA.RData")
+save(data, file = "data/analysis/circRNA_all.RData")
 
 
 
@@ -44,7 +44,7 @@ read_circRNA <- function(id, protein, species, experiment, cell_line, study, GSE
     
     # accessory information
     total <- readLines(file, n = 1)
-    total <- as.numeric(strsplit(total, " ")[[1]][3])
+    total <- as.numeric(strsplit(total, " ")[[1]][4])
     circRNA <- read.table(file, skip = 1, stringsAsFactor = FALSE, sep = "\t", header = TRUE)
     circRNA$circ <- paste(circRNA$chr, circRNA$start, circRNA$end, circRNA$strand) # circRNA name
     

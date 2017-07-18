@@ -6,7 +6,7 @@
 
 #########  load data  ##########
 
-load("data/analysis/circRNA.RData")
+load("data/analysis/circRNA_all.RData")
 
 ######  find circRNAs that are bound by RBPs from all collected CLIP-Seq datasets  ####3
 # this set of circRNAs are more likely to be true since they are the

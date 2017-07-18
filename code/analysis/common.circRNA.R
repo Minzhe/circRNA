@@ -6,7 +6,7 @@
 
 ###########  read data  ############
 
-load("data/analysis/circRNA.RData")
+load("data/analysis/circRNA_all.RData")
 protein <- sapply(1:length(data), function(i) data[[i]]$protein)
 control <- data[which(protein == "IgG")]
 data <- data[which(protein != "IgG")]

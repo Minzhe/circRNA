@@ -5,7 +5,7 @@
 
 #######  read data  ############
 
-load("data/analysis/circRNA.RData")
+load("data/analysis/circRNA_all.RData")
 protein <- sapply(1:length(data), function(i) data[[i]]$protein)
 data <- data[which(protein != "IgG")]
 protein <- sapply(1:length(data), function(i) data[[i]]$protein)
@@ -42,7 +42,7 @@ for (sp in c("hg19", "mm9", "dm3")) {
     lib_pos$on_exon <- TRUE
     lib_pos$len <- as.numeric(lib_pos$end) - as.numeric(lib_pos$start) + 1
     
-    gtf <- read.table(paste("~/data/ucsc.", sp, ".gtf", sep = ""), stringsAsFactors = FALSE)
+    gtf <- read.table(paste("~/data/genomes/", sp, "/ucsc.", sp, ".gtf", sep = ""), stringsAsFactors = FALSE)
     gtf <- gtf[, c(1, 3, 4, 5, 7)]
     colnames(gtf) <- c("chr", "type", "start", "end", "strand")
     gtf <- gtf[gtf$type == "exon", ]

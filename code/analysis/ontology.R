@@ -26,7 +26,7 @@ all_genes <- unique(unlist(sapply(1:length(gos), function(i) gos[[i]]$genes))) #
 common <- read.table("data/analysis/common.txt", sep = "\t")
 common <- common[1:50,]
 
-load("data/analysis/data.RData")
+load("data/analysis/circRNA_all.RData")
 species <- sapply(1:length(data), function(i) data[[i]]$species) # must be human
 protein <- sapply(1:length(data), function(i) data[[i]]$protein) # must be human
 # the first part is human RBP binding sites on circRNA
